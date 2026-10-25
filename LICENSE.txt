@@ -1,0 +1,59 @@
+Nyra SDK Binary Distribution License
+Version 1.0
+
+Copyright (c) 2026 xiangjiang.tang. All rights reserved except as granted below.
+
+1. Scope
+
+This agreement covers the proprietary Nyra compiler and analyzer binaries,
+Nyra-owned runtime components, generic recipes, interfaces, examples and
+accompanying SDK documentation distributed by the copyright holder ("SDK").
+Separately licensed components, including LLVM and MIT-licensed packages,
+remain subject to their own licenses. Nothing in this agreement restricts
+rights granted by those separate licenses or applicable mandatory law.
+
+2. Use
+
+You may download, install, copy internally and use the SDK without a license
+fee for personal, educational, open-source or commercial development,
+including automated builds and use on your organization's build servers.
+No compiler or analyzer source-code license is granted. Rights not expressly
+granted are reserved by the copyright holder.
+
+3. SDK redistribution
+
+You may redistribute an official SDK as a complete, unmodified distribution,
+including this license, all third-party notices and its version information.
+You must not present a redistribution as your own SDK or claim endorsement by
+the copyright holder. This section does not grant permission to redistribute
+modified proprietary compiler/analyzer binaries or compiler/analyzer source.
+Separately licensed components can be redistributed under their own terms.
+
+4. Your software and runtime redistribution
+
+You retain your rights in source code and applications you create. Using the
+SDK does not require you to disclose your code or license your applications
+under this agreement, and does not grant the SDK copyright holder ownership
+of your applications.
+
+You may copy, compile, adapt and incorporate the Nyra-owned runtime libraries,
+interfaces, generic recipes and examples supplied in the SDK into your software,
+and redistribute the resulting software and required runtime components in
+source or binary form, including through commercial application stores.
+Retain this license with redistributed Nyra-owned runtime components. Separate
+third-party license obligations remain applicable. These runtime permissions
+do not grant rights to the compiler or analyzer implementations.
+
+5. Updates, trademarks and support
+
+The copyright holder is not obligated to provide updates, support or continued
+availability of any SDK version. This agreement grants no trademark rights
+beyond truthful identification of the SDK and its origin.
+
+6. Disclaimer
+
+THE SDK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. TO THE EXTENT PERMITTED BY APPLICABLE
+LAW, THE COPYRIGHT HOLDER IS NOT LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SDK OR ITS USE.

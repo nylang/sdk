@@ -1,0 +1,10 @@
+# SDK binaries belong in Release assets.
+*.zip
+*.tar.gz
+*.o
+*.obj
+*.a
+*.lib
+*.pdb
+*.dSYM/
+.DS_Store
