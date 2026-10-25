@@ -1,14 +1,18 @@
 # Install the Nyra SDK
 
-These instructions describe the planned stable archive format. The first 1.0.0
-artifacts are not available until the release is published.
+Install version 1.0.0 from the [official release](https://github.com/nylang/sdk/releases/tag/v1.0.0).
+Use its SHA256SUMS and per-host release records for the exact artifact identities.
 
 ## Prerequisites
 
-Use an archive matching your host OS and architecture. macOS requires Xcode
-Command Line Tools and its system SDK. Windows native final links require Visual
-Studio C++ Build Tools and a Windows SDK. Linux requires a compatible native C/C++
-runtime and development files. The packaged LLVM query wrapper requires Python 3.
+Use an archive matching your host OS and architecture. The initial macOS arm64 build requires macOS 27.0 or newer (its Mach-O
+deployment target is 27.0), plus Xcode Command Line Tools and the system SDK.
+It was accepted on macOS 27.0.1; earlier macOS releases are not covered. Windows native final links require Visual
+Studio C++ Build Tools and a Windows SDK. Linux was accepted on AlmaLinux 10.0 x86_64. The packaged ELF tools
+require at least GLIBC 2.34, GLIBCXX 3.4.30 and CXXABI 1.3.13 symbols, plus
+zlib, libxml2 and their system dependencies. Matching native development
+files are required for application links; a different distribution is not
+covered by the native execution receipt. The packaged LLVM query wrapper requires Python 3.
 Refer to the exact release notes for accepted OS versions and external tools.
 Android/iOS final links require the appropriate external NDK or Apple SDK.
 
@@ -102,3 +106,61 @@ nyrac build main.ny -O2 --link -o hello
 Use `-o hello.exe` on Windows. Run the generated executable. Package dependencies
 inside the SDK are relative and remain valid when the entire SDK is moved; update
 the absolute SDK paths in your own project after moving it.
+
+## Bundled target libraries
+
+Every host archive includes ten runtime profiles. Only its own host's compiler
+and analyzer are executable tools in that archive.
+
+- Desktop: macOS arm64, Linux x86_64 and Windows x86_64.
+- Android: arm64 and x86_64, API 28.
+- Apple mobile: iOS arm64 and iOS Simulator arm64, minimum iOS 15.0.
+- Linux RISC-V: RV64GC / LP64D.
+- Freestanding RISC-V: RV64GC / LP64D (`none-riscv64`) and
+  RV64IMAC / LP64 (`nyraos-riscv64`). These two profiles contain kernel and
+  provider contracts; they do not include hosted stdlib, JSON, YAML or a platform
+  archive. Supply the required provider implementation before linking.
+
+Hosted profiles include precompiled kernel, stdlib, JSON, YAML and the platform
+archive. Mobile and foreign runtime profiles have library/ABI/link acceptance;
+the release does not claim execution on an Android/iOS device or a RISC-V OS.
+The macOS archive also carries `frameworks/NyraRuntime.xcframework` for the two
+iOS profiles. Apple final linking and XCFramework assembly require macOS/Xcode.
+Other final cross-target links require the target's NDK, SDK, sysroot or CRT.
+Those system SDKs are not included in the release.
+
+The manifest and provider requirements remain authoritative for exact triples,
+CPU features, ABIs and supported platform operations. For example, iOS does not
+provide the hosted process-spawn operations.
+
+## Distribution signing status
+
+The initial SDK records `signing: not-attested`: no macOS Developer ID /
+notarization or Windows Authenticode attestation is supplied. macOS link-time
+ad-hoc signatures do not attest a publisher identity. Gatekeeper or SmartScreen
+may warn when launching downloaded binaries. Verify the official release origin
+and complete SHA-256 digest before deciding to run them.
+
+## Run your package's tests
+
+The SDK compiler includes test discovery and a test harness. Built-in `assert`
+works without an additional test-framework package. Add this function to the
+example `main.ny` above:
+
+```nyra
+@test
+func test_answer() {
+  var values: Array<int32> = Array<int32>{};
+  values.Push(40);
+  values.Push(2);
+  assert(values.Get(0) + values.Get(1) == 42);
+}
+```
+
+```text
+nyrac test . --out-dir ../test-objects --report ../test-report.json
+```
+
+This installed-package test flow passed on all three release hosts with runtime
+source fallback disabled. The optional `ntest` soft-assertion framework is not a
+bundled runtime package in this SDK.

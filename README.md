@@ -2,9 +2,11 @@
 
 Official binary SDK distributions for the Nyra programming language.
 
-The first stable **1.0.0** release is being prepared and is not published yet.
-A version tag is published only after its native build and SDK acceptance gates
-pass. Downloadable SDKs will appear on the [Releases](https://github.com/nylang/sdk/releases) page.
+Download **[Nyra SDK 1.0.0](https://github.com/nylang/sdk/releases/tag/v1.0.0)**
+for macOS arm64, Linux x86_64 or Windows x86_64. Each archive includes ten target
+runtime profiles. See [INSTALL.md](INSTALL.md) for host requirements and scope.
+Release assets include SHA256SUMS, per-host metadata and the full acceptance
+summary. Distribution signing is explicitly recorded as `not-attested`.
 
 ## Contents
 
@@ -39,3 +41,11 @@ Use this repository's [issue tracker](https://github.com/nylang/sdk/issues) for
 SDK installation and compiler/analyzer defects. Include the SDK version, host,
 target, exact command, diagnostics and a small reproducer. Do not attach private
 source, credentials or signing keys.
+
+## Compatibility policy
+
+Language and compiler-pipeline capabilities are frozen for the 1.0–1.2
+stabilization period. Fixes preserve the existing language contracts; libraries
+may evolve under their own versions. Kernel and stdlib are 1.0.0 in the initial
+SDK; JSON is 0.19.0 and YAML is 0.18.0. Use the SDK manifest and package lock for
+the exact accepted combination.
