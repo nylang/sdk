@@ -1,0 +1,43 @@
+name: Package binary SDK patch
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        default: '1.0.1'
+        type: string
+      input_sha256:
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      VERSION: ${{ inputs.version }}
+      INPUT_SHA256: ${{ inputs.input_sha256 }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.13'
+      - name: Free temporary runner space
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+      - name: Retrieve hash-pinned binary packaging inputs
+        run: |
+          python -c 'import os,re; assert re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+",os.environ["VERSION"]); assert re.fullmatch(r"[0-9a-f]{64}",os.environ["INPUT_SHA256"])'
+          test "$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/v$VERSION" --jq .draft)" = true
+          mkdir -p work
+          gh release download "v$VERSION" --pattern packaging-inputs.tar.gz --dir work
+          python -c 'import hashlib,os,tarfile; p="work/packaging-inputs.tar.gz"; assert hashlib.file_digest(open(p,"rb"),"sha256").hexdigest()==os.environ["INPUT_SHA256"]; tarfile.open(p).extractall("work",filter="data")'
+      - name: Assemble SDK archives (no compiler builds or tests)
+        run: python tools/package_sdk.py work
+      - name: Upload draft distribution assets
+        run: |
+          test "$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/v$VERSION" --jq .draft)" = true
+          gh release upload "v$VERSION" work/output/* --clobber
