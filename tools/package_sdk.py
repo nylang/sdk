@@ -16,13 +16,22 @@ def relative(name):
 def download(url,path,expected,headers=None):
  with urllib.request.urlopen(urllib.request.Request(url,headers=headers or {}),timeout=180) as response,path.open('wb') as stream:shutil.copyfileobj(response,stream,1024*1024)
  if sha(path)!=expected:raise ValueError('download SHA-256 mismatch: '+path.name)
+# Public release checksums, pinned independently of the binary overlay plan.
+ledger=work/'baseline-SHA256SUMS'
+download('https://github.com/nylang/sdk/releases/download/v1.0.0/SHA256SUMS',ledger,'01009f3e848bcdfeb923630c85da924f524fe0178431236537ca6a98596e1041')
+baseline_sums={line.split()[1]:line.split()[0] for line in ledger.read_text().splitlines() if line.strip()}
 def unpack(record,upstream=False):
  key=record['key'];archive=work/(key+('.tgz' if upstream else '.zip' if key.startswith('windows') else '.tgz'));dest=work/'bases'/key;dest.mkdir(parents=True)
  url=record.get('url');headers={}
  if upstream:
   token=json.load(urllib.request.urlopen('https://ghcr.io/token?service=ghcr.io&scope=repository:homebrew/core/'+key+':pull'))['token']
   url='https://ghcr.io/v2/homebrew/core/'+key+'/blobs/sha256:'+record['sha256'];headers={'Authorization':'Bearer '+token}
- download(url,archive,record['sha256'],headers)
+ expected=record['sha256']
+ if not upstream:
+  official='https://github.com/nylang/sdk/releases/download/v1.0.0/'
+  if not url.startswith(official):raise ValueError('baseline must use the pinned official release')
+  expected=baseline_sums[url.removeprefix(official)]
+ download(url,archive,expected,headers)
  if zipfile.is_zipfile(archive):
   with zipfile.ZipFile(archive) as z:
    for name in z.namelist():relative(name)
