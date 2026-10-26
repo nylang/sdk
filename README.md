@@ -22,7 +22,10 @@ macOS binaries are ad-hoc signed, without Developer ID signing or notarization.
 
 Compiler, frontend and analyzer implementation sources are proprietary and are
 not distributed in this repository. This repository contains public SDK
-documentation and release metadata; SDK archives are release assets.
+documentation, release metadata and binary packaging automation; SDK archives
+are release assets. The packaging workflow reconstructs hash-checked binary
+deltas from published artifacts and does not contain or compile the Nyra
+compiler implementation.
 
 ## Install and use
 

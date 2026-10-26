@@ -69,6 +69,10 @@ def assemble(sdk):
  for row in manifest['targets']+manifest.get('runtime_targets',[]):
   assert {p['name'] for p in row['packages']}==({'kernel'} if row.get('hosted') is False else {'kernel','ntest','stdlib'})
  assert not any('/json/' in f['path'] or '/yaml/' in f['path'] or f['path'].endswith('.go') for f in manifest['files'])
+ for entry in manifest['files']:
+  path=relative(entry['path'])
+  if path.suffix in ('.ny','.ni','.nk'):
+   if len(path.parts)<5 or path.parts[0]!='targets' or path.parts[2] not in ('kernel','ntest','stdlib') or path.parts[3]!='sources' or 'private' in path.parts:raise ValueError('Nyra implementation source outside public package interfaces')
  dist=work/'output';dist.mkdir(exist_ok=True);archive=dist/(root.name+('.zip' if host.startswith('windows') else '.tar.gz'))
  if host.startswith('windows'):
   with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
