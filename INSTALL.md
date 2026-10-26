@@ -14,6 +14,9 @@ require at least GLIBC 2.34, GLIBCXX 3.4.30 and CXXABI 1.3.13 symbols, plus
 zlib, libxml2 and their system dependencies. Matching native development
 files are required for application links; a different distribution is not
 covered by the native execution receipt. The packaged LLVM query wrapper requires Python 3.
+The macOS native deployment default is 14.0, matching its precompiled packages.
+An explicit `--llvm-target` or `MACOSX_DEPLOYMENT_TARGET` override requires
+libraries built for the same target triple.
 The Linux/Windows executable bytes are unchanged from 1.0.0; 1.0.1 adds ntest
 and removes the JSON/YAML package payload. This release did not rerun the
 bootstrap/regression/unit suites. Refer to the release notes for validation scope.
