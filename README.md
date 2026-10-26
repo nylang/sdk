@@ -2,18 +2,21 @@
 
 Official binary SDK distributions for the Nyra programming language.
 
-Download **[Nyra SDK 1.0.0](https://github.com/nylang/sdk/releases/tag/v1.0.0)**
-for macOS arm64, Linux x86_64 or Windows x86_64. Each archive includes ten target
-runtime profiles. See [INSTALL.md](INSTALL.md) for host requirements and scope.
+Download **[Nyra SDK 1.0.1](https://github.com/nylang/sdk/releases/tag/v1.0.1)**
+for macOS arm64, macOS x86_64, Linux x86_64 or Windows x86_64. Each archive
+includes eleven target runtime profiles. See [INSTALL.md](INSTALL.md) for host requirements and scope.
 Release assets include SHA256SUMS, per-host metadata and the full acceptance
-summary. Distribution signing is explicitly recorded as `not-attested`.
+scope. Version 1.0.1 is a packaging patch: full bootstrap, regression and unit
+suites were intentionally not rerun. macOS tools target macOS 14.0 or newer;
+Intel execution and macOS 14 runtime execution are not yet accepted.
+macOS binaries are ad-hoc signed, without Developer ID signing or notarization.
 
 ## Contents
 
 - `nyrac`: the Nyra compiler, with LLVM statically linked.
 - `nyra-analyzer`: the analyzer and language server.
 - The pinned LLVM developer tools, headers and static libraries.
-- Precompiled kernel, standard library, JSON and YAML packages.
+- Precompiled kernel, ntest and standard library packages.
 - Public interfaces and generic/inline recipes required by SDK consumers.
 - File inventories, package locks, component licenses and acceptance summaries.
 
@@ -46,6 +49,9 @@ source, credentials or signing keys.
 
 Language and compiler-pipeline capabilities are frozen for the 1.0–1.2
 stabilization period. Fixes preserve the existing language contracts; libraries
-may evolve under their own versions. Kernel and stdlib are 1.0.0 in the initial
-SDK; JSON is 0.19.0 and YAML is 0.18.0. Use the SDK manifest and package lock for
-the exact accepted combination.
+may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.1.
+JSON and YAML evolve independently at [nylang/json](https://github.com/nylang/json)
+and [nylang/yaml](https://github.com/nylang/yaml); they are not SDK packages.
+Their licenses remain in the SDK because the tools embed them. Linux/Windows
+tool binaries remain version 1.0.0; macOS tools are 1.0.1. Use the SDK manifest
+and package lock for exact component versions.

@@ -1,19 +1,22 @@
 # Install the Nyra SDK
 
-Install version 1.0.0 from the [official release](https://github.com/nylang/sdk/releases/tag/v1.0.0).
+Install version 1.0.1 from the [official release](https://github.com/nylang/sdk/releases/tag/v1.0.1).
 Use its SHA256SUMS and per-host release records for the exact artifact identities.
 
 ## Prerequisites
 
-Use an archive matching your host OS and architecture. The initial macOS arm64 build requires macOS 27.0 or newer (its Mach-O
-deployment target is 27.0), plus Xcode Command Line Tools and the system SDK.
-It was accepted on macOS 27.0.1; earlier macOS releases are not covered. Windows native final links require Visual
+Use an archive matching your host OS and architecture. macOS arm64 and x86_64
+builds target macOS 14.0 or newer and require Xcode Command Line Tools plus the
+system SDK. Deployment metadata was checked, but execution on macOS 14 and an
+Intel Mac was not performed for this packaging patch. Windows native final links require Visual
 Studio C++ Build Tools and a Windows SDK. Linux was accepted on AlmaLinux 10.0 x86_64. The packaged ELF tools
 require at least GLIBC 2.34, GLIBCXX 3.4.30 and CXXABI 1.3.13 symbols, plus
 zlib, libxml2 and their system dependencies. Matching native development
 files are required for application links; a different distribution is not
 covered by the native execution receipt. The packaged LLVM query wrapper requires Python 3.
-Refer to the exact release notes for accepted OS versions and external tools.
+The Linux/Windows executable bytes are unchanged from 1.0.0; 1.0.1 adds ntest
+and removes the JSON/YAML package payload. This release did not rerun the
+bootstrap/regression/unit suites. Refer to the release notes for validation scope.
 Android/iOS final links require the appropriate external NDK or Apple SDK.
 
 ## Download and verify
@@ -23,13 +26,16 @@ GitHub release. Verify the archive's SHA-256 against its entry in `SHA256SUMS`:
 
 ```text
 # macOS
-shasum -a 256 nyra-sdk-1.0.0-darwin-arm64.tar.gz
+shasum -a 256 nyra-sdk-1.0.1-darwin-arm64.tar.gz
+
+# macOS Intel
+shasum -a 256 nyra-sdk-1.0.1-darwin-x86_64.tar.gz
 
 # Linux
-sha256sum nyra-sdk-1.0.0-linux-x86_64.tar.gz
+sha256sum nyra-sdk-1.0.1-linux-x86_64.tar.gz
 
 # Windows PowerShell
-Get-FileHash .\nyra-sdk-1.0.0-windows-x86_64.zip -Algorithm SHA256
+Get-FileHash .\nyra-sdk-1.0.1-windows-x86_64.zip -Algorithm SHA256
 ```
 
 Compare the entire digest before extracting. A checksum verifies consistency
@@ -52,7 +58,7 @@ nyra-sdk-<version>-<host>/
     bin/nyra-analyzer[.exe]
     share/nyra/analyzer/analysis_options.yaml
     llvm/{bin,include,lib,licenses}/
-  targets/<target>/{kernel,stdlib,json,yaml}/
+  targets/<target>/{kernel,ntest,stdlib}/
   share/nyra/
 ```
 
