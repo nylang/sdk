@@ -41,6 +41,11 @@ def assemble(sdk):
   if 'merge' in row:
    commands=['CREATE '+str(target)]+['ADDLIB '+str(bases['llvm']/'lib'/name) for name in row['merge']]+['SAVE','END']
    subprocess.run([str(ar),'--format=darwin','-M'],input='\n'.join(commands)+'\n',text=True,check=True);merged=True
+  elif 'zstd' in row:
+   delta=inputs/'blobs'/row['zstd']
+   if sha(delta)!=row['zstd']:raise ValueError('binary delta hash mismatch')
+   prior=bases[row['prior'][0]]/relative(row['prior'][1])
+   subprocess.run(['zstd','-q','-d','--long=29','--patch-from='+str(prior),str(delta),'-o',str(target)],check=True)
   elif 'base' in row:shutil.copyfile(bases[row['base'][0]]/relative(row['base'][1]),target)
   else:
    prior=bases[row['prior'][0]]/relative(row['prior'][1]) if row['prior'] else None
