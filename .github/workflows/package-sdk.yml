@@ -33,13 +33,16 @@ jobs:
       - name: Retrieve hash-pinned binary packaging inputs
         run: |
           python -c 'import os,re; assert re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+",os.environ["VERSION"]); assert re.fullmatch(r"[0-9a-f]{64}",os.environ["INPUT_SHA256"])'
-          test "$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/v$VERSION" --jq .draft)" = true
+          release_id=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq ".[] | select(.tag_name == \"v$VERSION\" and .draft == true) | .id")
+          test -n "$release_id"
+          echo "RELEASE_ID=$release_id" >> "$GITHUB_ENV"
+          asset_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/$release_id/assets" --jq '.[] | select(.name == "packaging-inputs.tar.gz") | .id')
+          test -n "$asset_id"
           mkdir -p work
-          gh release download "v$VERSION" --pattern packaging-inputs.tar.gz --dir work
+          gh api -H 'Accept: application/octet-stream' "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id" > work/packaging-inputs.tar.gz
           python -c 'import hashlib,os,tarfile; p="work/packaging-inputs.tar.gz"; assert hashlib.file_digest(open(p,"rb"),"sha256").hexdigest()==os.environ["INPUT_SHA256"]; tarfile.open(p).extractall("work",filter="data")'
       - name: Assemble SDK archives (no compiler builds or tests)
         run: python tools/package_sdk.py work
       - name: Upload draft distribution assets
         run: |
-          test "$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/v$VERSION" --jq .draft)" = true
-          gh release upload "v$VERSION" work/output/* --clobber
+          python tools/upload_sdk.py work/output "$RELEASE_ID"

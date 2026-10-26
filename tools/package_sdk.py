@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib,json,os,shutil,subprocess,sys,tarfile,urllib.request,zipfile
 
 work=Path(sys.argv[1]).resolve();inputs=work/'inputs';plan=json.loads((inputs/'plan.json').read_text());version=plan['version'];bases={}
+assert version==os.environ['VERSION']
 def sha(path):
  with path.open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
 def write(path,value):
