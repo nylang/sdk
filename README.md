@@ -2,21 +2,16 @@
 
 Official binary SDK distributions for the Nyra programming language.
 
-Download **[Nyra SDK 1.0.2](https://github.com/nylang/sdk/releases/tag/v1.0.2)**
-for macOS arm64, macOS x86_64, Linux x86_64 or Windows x86_64. Each archive
-includes eleven target runtime profiles. See [INSTALL.md](INSTALL.md) for host requirements and scope.
-Release assets include SHA256SUMS, per-host metadata and the full acceptance
-scope. Version 1.0.2 fixes ARC owner lifetimes and variant-arm ownership checks,
-adds implicit SDK runtime dependency resolution, and aligns compiler/analyzer
-versions. All four host configurations passed clean-source three-generation
-bootstrap, G2/G3 fixed-point, regression and unit gates. The macOS x86_64 tools
-were executed through Rosetta; this release does not claim native Intel Mac
-execution. macOS tools target macOS 14.0 or newer; execution on macOS 14
-has not been accepted.
-macOS binaries are ad-hoc signed, without Developer ID signing or notarization.
+Download **[Nyra SDK 1.0.3](https://github.com/nylang/sdk/releases/tag/v1.0.3)**
+for macOS arm64, macOS x86_64, Linux x86_64 or Windows x86_64. This is a desktop-only release: each archive contains its corresponding native runtime target. [SDK 1.0.2](https://github.com/nylang/sdk/releases/tag/v1.0.2) remains available with its original eleven-profile cross-target catalog.
+
+Version 1.0.3 adds the native `nyra` package manager, workspace resolution, portable v2 locks, embedded Git acquisition and distribution tools. Existing four-host qualification is reused for the original frozen artifacts. Native Intel execution is accepted. macOS deployment target is 14.0; actual macOS 14 execution is not claimed. Distribution signing/notarization is not attested.
+
+**Known issue:** the frozen compiler may reject portable Git-lock consumers by requiring an application pin for stdlib's SDK-internal kernel edge. The fix belongs to 1.0.4. The published HTTP/TLS Git-consumer graph requires corrected 1.0.4 tools. See [1.0.3 release notes](RELEASE-1.0.3.md).
 
 ## Contents
 
+- `nyra`: the native package manager.
 - `nyrac`: the Nyra compiler, with LLVM statically linked.
 - `nyra-analyzer`: the analyzer and language server.
 - The pinned LLVM developer tools, headers and static libraries.
@@ -56,9 +51,9 @@ source, credentials or signing keys.
 
 Language and compiler-pipeline capabilities are frozen for the 1.0–1.2
 stabilization period. Fixes preserve the existing language contracts; libraries
-may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.2.
+may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.3.
 JSON and YAML evolve independently at [nylang/json](https://github.com/nylang/json)
 and [nylang/yaml](https://github.com/nylang/yaml); they are not SDK packages.
-Their licenses remain in the SDK because the tools embed them. Compiler and
-analyzer versions are 1.0.2 on all four hosts. Use the SDK manifest and package
+Their licenses remain in the SDK because the tools embed them. Compiler, analyzer and
+manager versions are 1.0.3 on all four hosts. Use the SDK manifest and package
 lock for exact component versions.
