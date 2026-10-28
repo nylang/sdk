@@ -2,13 +2,17 @@
 
 Official binary SDK distributions for the Nyra programming language.
 
-Download **[Nyra SDK 1.0.1](https://github.com/nylang/sdk/releases/tag/v1.0.1)**
+Download **[Nyra SDK 1.0.2](https://github.com/nylang/sdk/releases/tag/v1.0.2)**
 for macOS arm64, macOS x86_64, Linux x86_64 or Windows x86_64. Each archive
 includes eleven target runtime profiles. See [INSTALL.md](INSTALL.md) for host requirements and scope.
 Release assets include SHA256SUMS, per-host metadata and the full acceptance
-scope. Version 1.0.1 is a packaging patch: full bootstrap, regression and unit
-suites were intentionally not rerun. macOS tools target macOS 14.0 or newer;
-Intel execution and macOS 14 runtime execution are not yet accepted.
+scope. Version 1.0.2 fixes ARC owner lifetimes and variant-arm ownership checks,
+adds implicit SDK runtime dependency resolution, and aligns compiler/analyzer
+versions. All four host configurations passed clean-source three-generation
+bootstrap, G2/G3 fixed-point, regression and unit gates. The macOS x86_64 tools
+were executed through Rosetta; this release does not claim native Intel Mac
+execution. macOS tools target macOS 14.0 or newer; execution on macOS 14
+has not been accepted.
 macOS binaries are ad-hoc signed, without Developer ID signing or notarization.
 
 ## Contents
@@ -52,9 +56,9 @@ source, credentials or signing keys.
 
 Language and compiler-pipeline capabilities are frozen for the 1.0–1.2
 stabilization period. Fixes preserve the existing language contracts; libraries
-may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.1.
+may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.2.
 JSON and YAML evolve independently at [nylang/json](https://github.com/nylang/json)
 and [nylang/yaml](https://github.com/nylang/yaml); they are not SDK packages.
-Their licenses remain in the SDK because the tools embed them. Linux/Windows
-tool binaries remain version 1.0.0; macOS tools are 1.0.1. Use the SDK manifest
-and package lock for exact component versions.
+Their licenses remain in the SDK because the tools embed them. Compiler and
+analyzer versions are 1.0.2 on all four hosts. Use the SDK manifest and package
+lock for exact component versions.
