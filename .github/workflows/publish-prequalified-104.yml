@@ -1,0 +1,32 @@
+name: Publish prequalified 1.0.4 with repository token
+on:
+  workflow_dispatch:
+    inputs:
+      public_artifact_urls:
+        description: Four temporary URLs for the frozen source-free binary artifacts
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: publish-v1.0.4
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Download only prequalified public binaries and verify frozen hashes
+        env:
+          PUBLIC_ARTIFACT_URLS: ${{ inputs.public_artifact_urls }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -B tools/publish_prequalified.py
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: publication-receipt
+          path: publication.json
+          retention-days: 30

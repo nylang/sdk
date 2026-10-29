@@ -1,0 +1,118 @@
+{
+  "version": "1.0.4",
+  "source_commit": "75ead8f96ad382819d863f83519e9f7611bfe11a",
+  "public_commit": "adfc348ca2c9130c9fce5412dc3cd569df405ef5",
+  "body": "Nyra SDK 1.0.4\nSource: 75ead8f96ad382819d863f83519e9f7611bfe11a\n\n# Nyra SDK 1.0.4\n\nPublished from prequalified artifacts; no tool rebuild or complete-suite rerun is part of publication.\n\n## Changes\n\n- Native nyra new/init and VS Code entry points create applications/libraries safely.\n- Portable Git dependencies, workspace pointers and locks work across moved/offline checkouts.\n- Compiler fixes cover borrowed string indexing, generic method definitions and nested private layouts.\n- Compiler/support modules have explicit ownership and operation boundaries.\n- Ntest now borrows message bytes through a runner output provider, without a temporary message allocation or direct puts call.\n- CPU/ABI freestanding bundles and OS/CPU hosted runtime bundles are separately downloadable.\n- Bootstrap selection uses pinned archive URLs and hashes; default adoption follows publication.\n\n## Scope\n\nNative tool downloads: macOS arm64/x86_64, Linux x86_64 and Windows x86_64.\nTen separate runtime bundles cover eighteen profiles. Physical machines were used where\navailable, then simulators/emulators, then compilation-only evidence. The complete\ncompiler suites are reused; publication does not rebuild or rerun accepted tools.\nThe newly compiled host source worksets do not imply downloadable host executables.\nSee ACCEPTANCE-1.0.4.json for the exact execution level of each runtime target.\n\n## Integrity\n\nRelease assets include SHA256SUMS, ACCEPTANCE.json, RELEASE-INDEX.json and per-host metadata.\nVerify the archive before extraction. macOS tools retain ad-hoc signatures; Developer ID\nsigning/notarization and actual macOS 14 execution are not claimed.\n",
+  "assets": [
+    {
+      "name": "ACCEPTANCE.json",
+      "sha256": "2f5d89273684efc64730daf38a00d7713136679a3c2d45b8e444decae48cd194",
+      "bytes": 5275
+    },
+    {
+      "name": "RELEASE-INDEX.json",
+      "sha256": "4072905f9da8dd2efe9f162384fedba1b2f01478656646d9478e2d373381bd32",
+      "bytes": 7406
+    },
+    {
+      "name": "RELEASE-NOTES.md",
+      "sha256": "2cccafe1af3b8b589ec77b4a3125cc14337524a8240e274b9fb2743aeee36869",
+      "bytes": 1519
+    },
+    {
+      "name": "SHA256SUMS",
+      "sha256": "11db677d40d193d9c0594322bfe680985bffde3aad71808dadae3181b7249743",
+      "bytes": 2188
+    },
+    {
+      "name": "nyra-runtime-1.0.4-kernel-ntest-arm64.tar.gz",
+      "sha256": "fb85e9b391674926692017d94ba73c84f00515ca2c53edde598562cb5d1ec955",
+      "bytes": 359447
+    },
+    {
+      "name": "nyra-runtime-1.0.4-kernel-ntest-rv64gc-lp64d.tar.gz",
+      "sha256": "ccb8eb0f00469d107cf04c2b32c16ae0782edd9aa873771b4e1154c933ecdddd",
+      "bytes": 437175
+    },
+    {
+      "name": "nyra-runtime-1.0.4-kernel-ntest-rv64imac-lp64.tar.gz",
+      "sha256": "0c150d2ba0bcf83ee5504b8298d654755196b5f3e81a0c9f8a8eecc6731e1c9d",
+      "bytes": 427517
+    },
+    {
+      "name": "nyra-runtime-1.0.4-kernel-ntest-x86_64.tar.gz",
+      "sha256": "1b4be168088e4296e962d4a4c5a41d9b8b66d16dff01226b1f84c0816ae3ea70",
+      "bytes": 376158
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-android.tar.gz",
+      "sha256": "1f135765abdcb4bd7de10603bab1ad9a32b1573c2317ba0c257a6f7ef2e7b8ac",
+      "bytes": 3078393
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-ios.tar.gz",
+      "sha256": "ed3513f7343372f64fa7624d0cd7984ef24979eb6a04d1d82c80edfd27cacdca",
+      "bytes": 4522626
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-linux-glibc.tar.gz",
+      "sha256": "e0a179e0909f2e1efdccf91a44574a6ad12d7cc0198d653e7f83043a88faacc7",
+      "bytes": 4903626
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-linux-musl.tar.gz",
+      "sha256": "e532e709d827b73275d556f0f48aae71103684d10146090b4681be98648e687b",
+      "bytes": 3080038
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-macos.tar.gz",
+      "sha256": "e7753459ace895c068425e103319d913545093eee6bd1d46f2441be48087269e",
+      "bytes": 3043888
+    },
+    {
+      "name": "nyra-runtime-1.0.4-stdlib-windows.tar.gz",
+      "sha256": "c349ad69dff58153254fa08d3c274c596d9430f3d7a74cd1e96318d6e6ba5af7",
+      "bytes": 3061176
+    },
+    {
+      "name": "nyra-sdk-1.0.4-darwin-arm64-release.json",
+      "sha256": "5f857ae273ae4f6f3483cead46dc7de275651416ca6ce183591f80d5bf9ef0cb",
+      "bytes": 953
+    },
+    {
+      "name": "nyra-sdk-1.0.4-darwin-arm64.tar.gz",
+      "sha256": "3945a2e5ae7b34c75ffbd0783b108953488996da70a597fad4d62b35e5bbae53",
+      "bytes": 692755064
+    },
+    {
+      "name": "nyra-sdk-1.0.4-darwin-x86_64-release.json",
+      "sha256": "bab8fee05594480a14997428f5910733f7115c24953b3d015609c1100c4fa003",
+      "bytes": 958
+    },
+    {
+      "name": "nyra-sdk-1.0.4-darwin-x86_64.tar.gz",
+      "sha256": "5aeea88b1871a0f519778792e294c4b55027b98786e074cb40706aff96d522c4",
+      "bytes": 460614748
+    },
+    {
+      "name": "nyra-sdk-1.0.4-linux-x86_64-release.json",
+      "sha256": "5aa0ee30a1e8367e7f9c050a58a4674c73d76b90652c9685a1174d27bbd505d5",
+      "bytes": 953
+    },
+    {
+      "name": "nyra-sdk-1.0.4-linux-x86_64.tar.gz",
+      "sha256": "c1eee52f9791c395f2c086c1911d027d0849846cc42b449aa42ad4d81d2c7fbb",
+      "bytes": 777602665
+    },
+    {
+      "name": "nyra-sdk-1.0.4-windows-x86_64-release.json",
+      "sha256": "da513ee5695c3b7fb7dd424e5ddf7b87028498487e904bd4a1ea7927f55b87aa",
+      "bytes": 972
+    },
+    {
+      "name": "nyra-sdk-1.0.4-windows-x86_64.zip",
+      "sha256": "43a83057f4e5e9fa3a9bf7c1c1c8a5243d31f74bd604e3124f907009b9e6787f",
+      "bytes": 379755003
+    }
+  ]
+}
