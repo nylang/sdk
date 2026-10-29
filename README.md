@@ -1,67 +1,49 @@
 # Nyra SDK
 
-Official binary SDK distributions for the Nyra programming language.
+Official binary distributions of the Nyra programming language.
 
-Download **[Nyra SDK 1.0.3](https://github.com/nylang/sdk/releases/tag/v1.0.3)**
-for macOS arm64, macOS x86_64, Linux x86_64 or Windows x86_64. This is a desktop-only release: each archive contains its corresponding native runtime target. [SDK 1.0.2](https://github.com/nylang/sdk/releases/tag/v1.0.2) remains available with its original eleven-profile cross-target catalog.
+Download [Nyra SDK 1.0.4](https://github.com/nylang/sdk/releases/tag/v1.0.4).
+The native SDK includes nyrac, nyra-analyzer, nyra, pinned LLVM and the matching native runtime.
 
-Version 1.0.3 adds the native `nyra` package manager, workspace resolution, portable v2 locks, embedded Git acquisition and distribution tools. Existing four-host qualification is reused for the original frozen artifacts. Native Intel execution is accepted. macOS deployment target is 14.0; actual macOS 14 execution is not claimed. Distribution signing/notarization is not attested.
+## Native SDK downloads
 
-**Known issue:** the frozen compiler may reject portable Git-lock consumers by requiring an application pin for stdlib's SDK-internal kernel edge. The fix belongs to 1.0.4. The published HTTP/TLS Git-consumer graph requires corrected 1.0.4 tools. See [1.0.3 release notes](RELEASE-1.0.3.md).
+- [darwin-arm64](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-sdk-1.0.4-darwin-arm64.tar.gz)
+- [darwin-x86_64](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-sdk-1.0.4-darwin-x86_64.tar.gz)
+- [linux-x86_64](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-sdk-1.0.4-linux-x86_64.tar.gz)
+- [windows-x86_64](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-sdk-1.0.4-windows-x86_64.zip)
 
-## Learn Nyra
+## Runtime package downloads
 
-Read the **[English developer course](docs/learn/en/README.md)** or the
-**[中文开发教程](docs/learn/README.md)**. Each language has 22 Markdown pages covering
-macOS/Windows/Linux setup, language basics, ownership, packages, tests, C interop
-and advanced mobile integration references. Start with lesson 00 for your host.
-Each lesson links to its counterpart and states SDK/tooling availability limits.
+- [nyra-runtime-1.0.4-kernel-ntest-rv64imac-lp64.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-kernel-ntest-rv64imac-lp64.tar.gz) — rv64imac-lp64
+- [nyra-runtime-1.0.4-kernel-ntest-rv64gc-lp64d.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-kernel-ntest-rv64gc-lp64d.tar.gz) — rv64gc-lp64d
+- [nyra-runtime-1.0.4-kernel-ntest-arm64.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-kernel-ntest-arm64.tar.gz) — none-arm64
+- [nyra-runtime-1.0.4-kernel-ntest-x86_64.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-kernel-ntest-x86_64.tar.gz) — none-x86_64
+- [nyra-runtime-1.0.4-stdlib-macos.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-macos.tar.gz) — darwin-arm64, darwin-x86_64
+- [nyra-runtime-1.0.4-stdlib-windows.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-windows.tar.gz) — windows-x86_64, windows-arm64
+- [nyra-runtime-1.0.4-stdlib-linux-glibc.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-linux-glibc.tar.gz) — linux-x86_64, linux-arm64, linux-riscv64
+- [nyra-runtime-1.0.4-stdlib-linux-musl.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-linux-musl.tar.gz) — linux-musl-x86_64, linux-musl-arm64
+- [nyra-runtime-1.0.4-stdlib-android.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-android.tar.gz) — android-arm64, android-x86_64
+- [nyra-runtime-1.0.4-stdlib-ios.tar.gz](https://github.com/nylang/sdk/releases/download/v1.0.4/nyra-runtime-1.0.4-stdlib-ios.tar.gz) — ios-arm64, ios-simulator-arm64, ios-simulator-x86_64
 
-## Contents
+Each runtime bundle exposes packages/kernel/package.yaml and packages/ntest/package.yaml;
+hosted bundles also expose packages/stdlib/package.yaml and its platform archive.
+Dependencies point to these roots; manifests select target leaves. amd64 means x86_64,
+and aarch64 means arm64. ARM32 and other deferred architectures are not included.
 
-- `nyra`: the native package manager.
-- `nyrac`: the Nyra compiler, with LLVM statically linked.
-- `nyra-analyzer`: the analyzer and language server.
-- The pinned LLVM developer tools, headers and static libraries.
-- Precompiled kernel, ntest and standard library packages.
-- Public interfaces and generic/inline recipes required by SDK consumers.
-- File inventories, package locks, component licenses and acceptance summaries.
+Kernel and ntest are OS-independent. Their native object artifacts still require matching
+CPU/ISA, ABI and object format. NyraOS uses RV64IMAC/LP64, distinct from RV64GC/LP64D.
+Ntest output and failure counters are supplied by the runner; freestanding startup,
+memory and compiler helper requirements are explicit in provider-requirements.json.
 
-Compiler, frontend and analyzer implementation sources are proprietary and are
-not distributed in this repository. This repository contains public SDK
-documentation, release metadata and binary packaging automation; SDK archives
-are release assets. The packaging workflow reconstructs hash-checked binary
-deltas from published artifacts and does not contain or compile the Nyra
-compiler implementation.
+## Acceptance
 
-## Install and use
+Four native tool SDKs retain their accepted compiler/tool bytes. Each compiler passed
+G1/G2 identity, 503 regressions and 1,033 dependency/compiler units; analyzer/manager
+passed 18/13 tool units. macOS x86_64 execution used Rosetta. Publication does not repeat these suites.
 
-See [INSTALL.md](INSTALL.md) for the directory layout, prerequisites, checksum
-verification and a first program. Each release manifest is authoritative for
-its exact host and target support. Do not infer support from an archive filename
-or from historical development receipts.
-
-## License
-
-The SDK is free for personal and commercial use. Complete, unmodified official
-SDKs may be redistributed. Applications created with the SDK may remain closed
-source. See [LICENSE.txt](LICENSE.txt) and the component notices inside each
-SDK archive. Independently licensed libraries and LLVM keep their own terms.
-
-## Issues
-
-Use this repository's [issue tracker](https://github.com/nylang/sdk/issues) for
-SDK installation and compiler/analyzer defects. Include the SDK version, host,
-target, exact command, diagnostics and a small reproducer. Do not attach private
-source, credentials or signing keys.
-
-## Compatibility policy
-
-Language and compiler-pipeline capabilities are frozen for the 1.0–1.2
-stabilization period. Fixes preserve the existing language contracts; libraries
-may evolve under their own versions. Kernel, ntest and stdlib remain 1.0.0 in SDK 1.0.3.
-JSON and YAML evolve independently at [nylang/json](https://github.com/nylang/json)
-and [nylang/yaml](https://github.com/nylang/yaml); they are not SDK packages.
-Their licenses remain in the SDK because the tools embed them. Compiler, analyzer and
-manager versions are 1.0.3 on all four hosts. Use the SDK manifest and package
-lock for exact component versions.
+The 18 runtime rows comprise 12 executed rows (including Rosetta) and six compile-only rows.
+Compile-only: Android arm64/x86_64, iOS device arm64/simulator x86_64, Windows arm64
+and freestanding x86_64. Windows arm64 consumer linking requires its MSVC ARM64 CRT.
+Linux arm64/riscv64 and Windows arm64 tool sources compile, but full executable SDKs
+for those hosts are not included. See [acceptance](ACCEPTANCE-1.0.4.json),
+[installation](INSTALL.md), [release notes](RELEASE-1.0.4.md) and [license](LICENSE.txt).

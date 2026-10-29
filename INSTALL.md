@@ -1,52 +1,69 @@
-# Install Nyra SDK 1.0.3
+# Install Nyra SDK 1.0.4
 
-Download the matching host archive, SHA256SUMS and per-host release metadata from [the official release](https://github.com/nylang/sdk/releases/tag/v1.0.3). Verify the archive against SHA256SUMS, then extract and keep the complete directory together.
+Download the matching host archive, SHA256SUMS and per-host release metadata
+from [the official release](https://github.com/nylang/sdk/releases/tag/v1.0.4).
+Verify SHA256 before extraction and keep the complete directory together.
 
 ## Requirements and scope
 
-Four native desktop hosts are accepted: macOS arm64, macOS x86_64, Linux x86_64 and Windows x86_64. Each SDK contains only its own native desktop runtime target. SDK 1.0.2 remains available with its eleven-profile cross-target catalog.
+Supported desktop hosts are macOS arm64, macOS x86_64, Linux x86_64 and Windows
+x86_64. Each SDK includes its own native runtime target. SDK 1.0.2 retains the
+historical eleven-profile catalog; 1.0.4 does not deliver that foreign catalog.
 
-macOS tools target 14.0+ and need Xcode Command Line Tools and a matching Apple SDK for native links. Execution was accepted on macOS 27.0.1 arm64 and macOS 26.5.1 native Intel; macOS 14 execution is not claimed. Linux execution was accepted on Ubuntu 24.04.5 / glibc 2.39; install native C/C++ development tools, zlib and libxml2 dependencies. Windows needs Visual Studio 2022 C++ Build Tools and a Windows SDK for native final links. No mobile/RISC-V execution or signing/notarization is attested.
+macOS needs Xcode Command Line Tools and a system SDK for native links; its
+minimum deployment target is 14.0. Current execution uses arm64 and Rosetta
+x86_64, without macOS 14 runtime acceptance. Linux needs the native development
+libraries required by the packaged LLVM tools. Windows final native links need
+Visual Studio C++ Build Tools and a Windows SDK. Source builds of the embedded
+Git provider additionally need CMake and Ninja on PATH. No signing/notarization
+is attested.
 
-## Layout
+## Layout and first application
+
+The directory containing `manifest.json` is the SDK root. Add
+`hosts/<host>/bin` and `hosts/<host>/llvm/bin` to PATH. Runtime package indexes
+are under `packages/{kernel,ntest,stdlib}/package.yaml`, with native targets
+below their `targets/<host>` directories. Configure VS Code's `nyra.sdkPath`
+to the SDK root.
 
 ```text
-nyra-sdk-1.0.3-<host>/
-  manifest.json
-  package-lock.json
-  LICENSE.txt
-  THIRD-PARTY-NOTICES.txt
-  hosts/<host>/bin/{nyra,nyrac,nyra-analyzer}[.exe]
-  hosts/<host>/llvm/{bin,include,lib,licenses}/
-  packages/{kernel,ntest,stdlib}/package.yaml
-  packages/{kernel,ntest,stdlib}/targets/<host>/
-  share/nyra/
-  licenses/
+nyra version
+nyrac version
+nyra-analyzer version
+nyra new hello
+cd hello
+nyrac check main.ny
+nyrac build main.ny -O2 --link -o hello
+nyrac test main.ny
 ```
 
-Add `hosts/<host>/bin` and `hosts/<host>/llvm/bin` to PATH. Configure editor compiler/analyzer paths to these tools. Run `nyra version`, `nyrac version` and `nyra-analyzer version` to inspect tool versions.
+Use `hello.exe` as the output on Windows. `nyra new mylib --kind lib` creates a
+library; `nyra init ./existing --name existing` retains existing source. Preview
+with `--dry-run --json`. VS Code Create/Initialize Package uses the same manager.
+SDK kernel/stdlib/ntest imports need no explicit dependency paths.
 
-## First program
+## Dependencies and relocation
 
-Create `package.yaml`:
+Use public Git origins with immutable pins for shared source packages; use
+`workspace.yaml` for private local pointers. `nyra lock` and `nyra fetch`
+explicitly acquire content; compiler/analyzer reads do not fetch. Prepared local
+and global stores support `nyra fetch --frozen --offline`. Public JSON and HTTP/TLS
+Git consumers pass with the corrected 1.0.4 tools. The 1.0.3 SDK-internal
+runtime-lock issue is fixed in 1.0.4.
 
-```yaml
-name: hello
-```
+Keep the SDK structure intact when moving it, and rebuild dependencies coherently
+for platform ABI 10. System Git and Python are not needed for native package
+creation/acquisition. SSH acquisition, registry/version-range solving and SDK
+self-update remain outside this release.
 
-Create `main.ny`:
+## Separate runtime bundles in 1.0.4
 
-```nyra
-import "stdlib:stdlib.ny";
+Extract the required OS/CPU or CPU/ABI bundle outside the project. Point package.yaml
+dependencies at packages/<name>/package.yaml, keeping all runtime packages from the
+same bundle together. Native SDK imports continue to use implicit runtime lookup.
+Cross consumers explicitly select the runtime bundle; a host SDK does not silently
+substitute its native libraries for another target.
 
-func main() -> int32 {
-  Console.Println("Hello, Nyra!");
-  return 0;
-}
-```
-
-Build with `nyrac build main.ny -O2 --link -o hello` (use `hello.exe` on Windows). SDK runtime imports are implicit; no absolute runtime path or workspace is needed.
-
-## Known package-lock issue
-
-Portable Git acquisition is explicit through `nyra lock` and `nyra fetch`; compilation never fetches. The frozen 1.0.3 compiler can incorrectly request an application origin pin for an SDK-internal kernel dependency when loading portable locks. This fix belongs to 1.0.4. Published HTTP/TLS Git consumers require those corrected tools. See [release notes](RELEASE-1.0.3.md). SSH acquisition, remote registry/version-range solving and SDK self-update are outside this release.
+Freestanding RV64IMAC/LP64 uses --package-profile rv64imac-lp64 plus matching
+CPU/features/ABI options. RV64GC/LP64D uses its separate rv64gc-lp64d profile.
+The bundle version is 1.0.4; individual package versions remain independently versioned.

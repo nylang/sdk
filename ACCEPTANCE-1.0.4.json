@@ -1,0 +1,179 @@
+{
+  "version": "1.0.4",
+  "tool_acceptance": "Original four-host G1/G2 and complete suites reused unchanged.",
+  "runtime_acceptance": {
+    "rows": [
+      {
+        "key": "android-arm64",
+        "triple": "aarch64-linux-android28",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "android-x86_64",
+        "triple": "x86_64-linux-android28",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "ios-arm64",
+        "triple": "arm64-apple-ios15.0",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "ios-simulator-arm64",
+        "triple": "arm64-apple-ios15.0-simulator",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "ios-simulator-x86_64",
+        "triple": "x86_64-apple-ios15.0-simulator",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "darwin-arm64",
+        "triple": "arm64-apple-macosx14.0",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "physical-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "darwin-x86_64",
+        "triple": "x86_64-apple-macosx14.0",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "rosetta-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "windows-x86_64",
+        "triple": "x86_64-pc-windows-msvc",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "physical-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "windows-arm64",
+        "triple": "aarch64-pc-windows-msvc",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": false
+      },
+      {
+        "key": "linux-x86_64",
+        "triple": "x86_64-unknown-linux-gnu",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "physical-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "linux-arm64",
+        "triple": "aarch64-unknown-linux-gnu",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "linux-riscv64",
+        "triple": "riscv64-unknown-linux-gnu",
+        "abi": "lp64d",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "linux-musl-x86_64",
+        "triple": "x86_64-unknown-linux-musl",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "physical-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "linux-musl-arm64",
+        "triple": "aarch64-unknown-linux-musl",
+        "abi": "",
+        "hosted": true,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "rv64imac-lp64",
+        "triple": "riscv64-unknown-elf",
+        "abi": "lp64",
+        "hosted": false,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "rv64gc-lp64d",
+        "triple": "riscv64-unknown-elf",
+        "abi": "lp64d",
+        "hosted": false,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      },
+      {
+        "key": "none-x86_64",
+        "triple": "x86_64-unknown-none",
+        "abi": "",
+        "hosted": false,
+        "compile": "passed",
+        "acceptance_level": "compile-only",
+        "consumer_executable_linked": false
+      },
+      {
+        "key": "none-arm64",
+        "triple": "aarch64-unknown-none",
+        "abi": "",
+        "hosted": false,
+        "compile": "passed",
+        "acceptance_level": "virtual-execution",
+        "consumer_executable_linked": true
+      }
+    ],
+    "ntest_units": 2,
+    "package_profile_selection_checks": 6,
+    "package_check_and_relocation_checks": 3
+  },
+  "limitations": [
+    "Three additional host tool sources compile; no executable packages are provided for those hosts.",
+    "Compile-only does not establish runtime execution. Windows arm64 consumer linking needs its MSVC CRT.",
+    "Cross-runtime bundles are separate downloads selected through their package.yaml roots."
+  ],
+  "publication": false
+}
