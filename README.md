@@ -9,6 +9,13 @@ Version 1.0.3 adds the native `nyra` package manager, workspace resolution, port
 
 **Known issue:** the frozen compiler may reject portable Git-lock consumers by requiring an application pin for stdlib's SDK-internal kernel edge. The fix belongs to 1.0.4. The published HTTP/TLS Git-consumer graph requires corrected 1.0.4 tools. See [1.0.3 release notes](RELEASE-1.0.3.md).
 
+## Learn Nyra
+
+[Nyra 中文开发教程](docs/learn/README.md) includes 22 Markdown pages covering
+macOS/Windows/Linux setup, language basics, ownership, packages, tests, C interop
+and advanced mobile integration references. Start with the matching platform's
+lesson 00. The course states SDK version and advanced-tooling limits explicitly.
+
 ## Contents
 
 - `nyra`: the native package manager.
