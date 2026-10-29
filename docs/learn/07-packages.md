@@ -1,5 +1,7 @@
 # 07 · 多文件、包和 TU
 
+[English](en/07-packages.md)
+
 [上一课](06-errors.md) · [教程目录](README.md) · [下一课](08-generics.md)
 
 程序变长后，不要把所有内容堆进 `main.ny`。这一课先把一个程序分成三个文件，再看包之间如何引用。

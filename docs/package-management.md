@@ -1,5 +1,7 @@
 # 公开 SDK 的包依赖说明
 
+[English](package-management.en.md)
+
 [教程目录](learn/README.md) · [安装指南](../INSTALL.md)
 
 ## SDK 自带的包

@@ -1,5 +1,7 @@
 # 01 · 变量、类型和输出
 
+[English](en/01-values.md)
+
 [上一课](00-macos-start.md) · [教程目录](README.md) · [下一课](02-control-functions.md)
 
 这一课学习如何记住一个数字或一段文字。仍然使用第 00 课的 `playground/main.ny`。

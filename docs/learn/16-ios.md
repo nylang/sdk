@@ -1,5 +1,7 @@
 # 16 · 在 iOS 应用里使用 Nyra
 
+[English](en/16-ios.md)
+
 [上一课：C 互调](15-c-interop.md) · [教程目录](README.md) · [下一课：Android](17-android.md)
 
 

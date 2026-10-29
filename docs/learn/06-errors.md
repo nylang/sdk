@@ -1,5 +1,7 @@
 # 06 · 空值、结果和错误处理
 
+[English](en/06-errors.md)
+
 [上一课](05-collections.md) · [教程目录](README.md) · [下一课](07-packages.md)
 
 “没找到”和“运行失败”都是正常程序会遇到的情况，不能只考虑成功路径。

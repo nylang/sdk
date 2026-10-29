@@ -1,8 +1,11 @@
 # 09 · 中文文本、文件、JSON 和 YAML
 
+[English](en/09-text-files.md)
+
 [上一课](08-generics.md) · [教程目录](README.md) · [下一课](10-tests-analyzer.md)
 
-这一课开始和程序外面的数据打交道。仍使用第 00 课生成的配置，里面已经包含 JSON 和 YAML 包。
+这一课开始和程序外面的数据打交道。文本和文件例子使用第 00 课的基础配置；
+JSON、YAML 例子还需要按本课说明单独配置生态依赖。
 
 ## 1. 逐个读取 Unicode 标量
 

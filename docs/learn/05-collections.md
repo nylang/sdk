@@ -1,5 +1,7 @@
 # 05 · 字符串、数组和字典
 
+[English](en/05-collections.md)
+
 [上一课](04-ownership.md) · [教程目录](README.md) · [下一课](06-errors.md)
 
 这一课处理“一段文字”“一组数”和“按名字查询的数据”。

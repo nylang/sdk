@@ -1,5 +1,7 @@
 # 00 · 在 macOS 上运行第一段程序
 
+[English](en/00-macos-start.md)
+
 [选择系统](00-start.md) · [教程目录](README.md) · [下一课：变量和类型](01-values.md)
 
 这一课只做一件事：让屏幕显示 `你好，Nyra！`。

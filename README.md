@@ -11,10 +11,11 @@ Version 1.0.3 adds the native `nyra` package manager, workspace resolution, port
 
 ## Learn Nyra
 
-[Nyra 中文开发教程](docs/learn/README.md) includes 22 Markdown pages covering
+Read the **[English developer course](docs/learn/en/README.md)** or the
+**[中文开发教程](docs/learn/README.md)**. Each language has 22 Markdown pages covering
 macOS/Windows/Linux setup, language basics, ownership, packages, tests, C interop
-and advanced mobile integration references. Start with the matching platform's
-lesson 00. The course states SDK version and advanced-tooling limits explicitly.
+and advanced mobile integration references. Start with lesson 00 for your host.
+Each lesson links to its counterpart and states SDK/tooling availability limits.
 
 ## Contents
 

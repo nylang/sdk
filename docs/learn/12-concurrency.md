@@ -1,5 +1,7 @@
 # 12 · 异步、生成器和线程
 
+[English](en/12-concurrency.md)
+
 [上一课](11-task-report.md) · [教程目录](README.md) · [下一课](13-systems.md)
 
 从这里开始是可选进阶。先区分三个词：

@@ -1,5 +1,7 @@
 # 11 · 综合练习：任务清单统计器
 
+[English](en/11-task-report.md)
+
 [上一课](10-tests-analyzer.md) · [教程目录](README.md) · [下一课](12-concurrency.md)
 
 现在把前面学过的知识连起来：读取一个文件，解析每行，统计完成情况，生成报告。

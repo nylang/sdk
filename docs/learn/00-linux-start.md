@@ -1,5 +1,7 @@
 # 00 · 在 Linux 上运行第一段程序
 
+[English](en/00-linux-start.md)
+
 [选择系统](00-start.md) · [教程目录](README.md) · [下一课：变量和类型](01-values.md)
 
 这一课使用 Linux x86_64、Bash 和匹配的本机 Nyra SDK。

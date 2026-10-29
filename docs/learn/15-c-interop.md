@@ -1,5 +1,7 @@
 # 15 · Nyra 与 C 相互调用
 
+[English](en/15-c-interop.md)
+
 [上一课](14-compiler-tools.md) · [教程目录](README.md) · [下一课：iOS](16-ios.md)
 
 这一课分别做两件事：Nyra 调用一个 C 函数，C 调用一个 Nyra 函数。

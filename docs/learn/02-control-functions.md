@@ -1,5 +1,7 @@
 # 02 · 判断、循环和函数
 
+[English](en/02-control-functions.md)
+
 [上一课](01-values.md) · [教程目录](README.md) · [下一课](03-structs.md)
 
 这一课让程序根据条件选择动作，并把重复的步骤整理成函数。

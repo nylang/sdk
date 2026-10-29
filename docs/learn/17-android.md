@@ -1,5 +1,7 @@
 # 17 · 在 Android 应用里使用 Nyra
 
+[English](en/17-android.md)
+
 [上一课：iOS](16-ios.md) · [教程目录](README.md)
 
 

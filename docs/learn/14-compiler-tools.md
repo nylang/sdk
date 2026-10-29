@@ -1,5 +1,7 @@
 # 14 · 看懂编译过程和性能数据
 
+[English](en/14-compiler-tools.md)
+
 [上一课](13-systems.md) · [教程目录](README.md) · [下一课：C 互调](15-c-interop.md)
 
 日常写程序不要求阅读 IR。这一课用于解释编译器在做什么，以及遇到慢、卡住或错误时怎样保留证据。

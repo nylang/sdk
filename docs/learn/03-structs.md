@@ -1,5 +1,7 @@
 # 03 · 用结构体组织数据
 
+[English](en/03-structs.md)
+
 [上一课](02-control-functions.md) · [教程目录](README.md) · [下一课](04-ownership.md)
 
 如果一本书既有书名，又有价格，把它们放在一起会比维护几个零散变量更清楚。

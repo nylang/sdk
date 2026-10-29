@@ -1,5 +1,7 @@
 # 10 · 测试、分析器和日常检查
 
+[English](en/10-tests-analyzer.md)
+
 [上一课](09-text-files.md) · [教程目录](README.md) · [下一课](11-task-report.md)
 
 这一课建立一个习惯：改完代码，不只看“能不能编译”，也检查“结果是不是对的”。

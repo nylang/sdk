@@ -1,5 +1,7 @@
 # 04 · 借用、复制和移动
 
+[English](en/04-ownership.md)
+
 [上一课](03-structs.md) · [教程目录](README.md) · [下一课](05-collections.md)
 
 这一课不急着讲内存布局。先回答一个实际问题：把数据交给函数后，原来的变量还能不能用？

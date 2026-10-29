@@ -1,5 +1,7 @@
 # 13 · 指针、分配器和内核代码
 
+[English](en/13-systems.md)
+
 [上一课](12-concurrency.md) · [教程目录](README.md) · [下一课](14-compiler-tools.md)
 
 这一课面向需要底层控制的读者。普通应用仍然可以继续使用标准库和自动清理的拥有类型。
