@@ -5,6 +5,8 @@
 Compilation answers whether the program is legal, not whether its calculation
 is correct. Build a habit of checking both.
 
+For test annotations and other attributes: [metadata dictionary and complete examples](reference-metadata.md).
+
 ## 1. Three complementary checks
 
 Compiler check validates syntax/types/imports. Unit tests compare actual behavior

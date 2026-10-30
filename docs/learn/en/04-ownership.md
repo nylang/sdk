@@ -5,6 +5,8 @@
 Before discussing layouts, answer a practical question: can the original
 variable still be used after passing its value to a function?
 
+Cleanup definitions and a complete example: [operator drop and copying policy](reference-types.md#drop).
+
 ## 1. Who keeps the resource alive?
 
 Integers usually hold their value directly. Strings and dynamic collections may

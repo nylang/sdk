@@ -4,6 +4,8 @@
 
 A book's title and price belong together. A struct gives related data a name.
 
+Full companion: [methods, static methods, named factories, get/set, extends, interfaces, delegation and drop](reference-types.md), including duplicate-name rules.
+
 ## 1. Define a data shape
 
 Complete program:

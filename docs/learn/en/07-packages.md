@@ -4,6 +4,8 @@
 
 Split growing programs by responsibility rather than collecting all behavior in main.
 
+Syntax companion: [import/export/module/part and a complete five-file project](reference-modules.md), covering aliases, show/hide, visibility and responsibilities.
+
 ## 1. Distinguish the boundaries
 
 A file is a disk artifact. A module is one translation unit (TU) with a public

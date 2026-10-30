@@ -6,6 +6,8 @@
 
 程序变长后，不要把所有内容堆进 `main.ny`。这一课先把一个程序分成三个文件，再看包之间如何引用。
 
+先查语法：[import/export/module/part 字典与完整五文件工程](reference-modules.md)，包含别名、show/hide、公开边界和模块职责。
+
 ## 1. 先分清三个名字
 
 - 文件：磁盘上的 `main.ny`、`prices.ny` 等。

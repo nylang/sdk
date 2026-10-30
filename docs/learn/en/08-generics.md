@@ -5,6 +5,8 @@
 Reuse an algorithm across types, express a common capability and pass behavior
 as an argument.
 
+Complete interface forms: [implements, interface extends, get/set and delegation](reference-types.md).
+
 ## 1. A numeric function with a type parameter
 
 Complete program:

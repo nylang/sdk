@@ -6,6 +6,8 @@
 
 这一课解决三种重复：相同的计算只是类型不同；不同的数据提供同一种能力；同一个算法需要换一步操作。
 
+接口完整写法：[implements、接口 extends、get/set 和 delegate](reference-types.md)。
+
 ## 1. 一个函数处理多种数字
 
 完整程序：

@@ -6,6 +6,18 @@ This course starts with your first program and builds toward a small tool split
 into clear modules. No language-design background is required. Start with lesson
 00 for your platform, even if you already know another programming language.
 
+## Language reference: look up definitions and complete examples
+
+- [Keyword and type dictionary](reference-keywords.md): each word's purpose, position and contextual distinctions.
+- [Types and behavior](reference-types.md): structs, extends, instance/static methods, factories, get/set, interfaces, delegation, drop and duplicate-name rules.
+- [Modules and visibility](reference-modules.md): import/export/module/part, as/show/hide, a complete five-file project and responsibility boundaries.
+- [Metadata dictionary](reference-metadata.md): valid targets, arguments, effects, restrictions and complete examples.
+
+These four references are available throughout the course. Lessons 03, 04, 07, 08
+and 10 link directly to their relevant companion.
+
+The nine complete program groups and one test file added in these references were checked and run on macOS arm64 with the native 1.0.3 seed compiler: two tests passed and one was ignored as declared. This focused example check is not a rerun of the other lessons or SDK release acceptance.
+
 ## How to use the course
 
 Read one lesson at a time: run a complete example, change one or two things,

@@ -35,6 +35,17 @@ CPU/ISA, ABI and object format. NyraOS uses RV64IMAC/LP64, distinct from RV64GC/
 Ntest output and failure counters are supplied by the runner; freestanding startup,
 memory and compiler helper requirements are explicit in provider-requirements.json.
 
+## Learn Nyra
+
+Start with the **[English developer course](docs/learn/en/README.md)** or
+**[中文开发教程](docs/learn/README.md)**. Each language has 26 Markdown pages,
+including a [keyword dictionary](docs/learn/en/reference-keywords.md),
+[types and methods](docs/learn/en/reference-types.md),
+[modules and visibility](docs/learn/en/reference-modules.md), and
+[metadata reference](docs/learn/en/reference-metadata.md), with complete examples.
+The course also covers host setup, ownership, packages, tests, C interop and mobile
+integration references. Individual lessons state their SDK availability limits.
+
 ## Acceptance
 
 Four native tool SDKs retain their accepted compiler/tool bytes. Each compiler passed
