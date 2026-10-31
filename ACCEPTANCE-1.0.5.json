@@ -1,0 +1,34 @@
+{
+  "version": "1.0.5",
+  "source_commit": "238d12ceacb479a238a9d9a878e8e1a1fc549f6a",
+  "validation_policy": "g1-g2-v1",
+  "hosts": [
+    "darwin-arm64",
+    "darwin-x86_64",
+    "linux-x86_64",
+    "windows-x86_64"
+  ],
+  "runtime_execution_required": {
+    "darwin-arm64": "physical-execution",
+    "linux-x86_64": "physical-execution",
+    "linux-musl-x86_64": "physical-execution",
+    "windows-x86_64": "physical-execution",
+    "darwin-x86_64": "rosetta-execution",
+    "ios-simulator-arm64": "virtual-execution",
+    "linux-arm64": "virtual-execution",
+    "linux-riscv64": "virtual-execution",
+    "linux-musl-arm64": "virtual-execution",
+    "rv64imac-lp64": "virtual-execution",
+    "rv64gc-lp64d": "virtual-execution",
+    "none-arm64": "virtual-execution"
+  },
+  "compile_only_targets": [
+    "android-arm64",
+    "android-x86_64",
+    "ios-arm64",
+    "ios-simulator-x86_64",
+    "none-x86_64",
+    "windows-arm64"
+  ],
+  "complete_suites_repeated_at_publication": false
+}
