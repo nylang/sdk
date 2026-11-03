@@ -17,6 +17,12 @@
 有多年开发经验也建议读完方法、extends、接口三段，核对 Nyra 的重名、布局和分派规则。
 下面保留原来的概览课和工程专题，方便复习及继续学习所有权、容器、错误处理和多文件组织；它们不再承担全部基础教学。
 
+## 接着学第 16–23 课
+
+[从泛型到 Flow 的分步课程](intermediate/README.md)继续基础路线：泛型 → lambda → enable 变参 → Iterator/Iterable → sync* → async/await → Future/Promise 错误 → async*/Flow。每课仍有 3 份完整示例和 1 份练习答案。
+
+查找语言规则、kernel/stdlib 能力及 API 合同时，使用[帮助文档手册](https://github.com/nylang/sdk/blob/main/docs/manual/README.md)。手册入口、分类、API 查询和单页合同模板已经分开组织，不把一个名字索引当成完整 API 文档。SDK 版本限制见各课说明。
+
 ## 语言参考：按名字查定义与完整示例
 
 - [关键字与类型字典](reference-keywords.md)：每个词的功能、位置及容易混淆的上下文写法。

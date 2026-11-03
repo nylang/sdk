@@ -18,6 +18,12 @@ expected output, explanations, common mistakes and an independently runnable exe
 
 Experienced programmers should still read the method, extension and interface sections to check Nyra’s naming, layout and dispatch rules. The older overview and project lessons below remain useful for review and subsequent ownership, containers, errors and modules; they are no longer the entire foundation course.
 
+## Continue through lessons 16–23
+
+[Generics through Flow](intermediate/README.md) continues the sequence: generics, lambdas, enable variadics, iterators, sync generators, async/await, Future/Promise errors, and async generators/Flow. Each lesson retains three complete examples and one independent answer.
+
+Use the [help manuals](../../manual/README.md) for language lookup, kernel/stdlib capabilities, API metadata search and member contracts. Search listings and complete contract pages remain distinct. Read each lesson’s SDK availability notes.
+
 ## Language reference: look up definitions and complete examples
 
 - [Keyword and type dictionary](reference-keywords.md): each word's purpose, position and contextual distinctions.

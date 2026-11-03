@@ -9,6 +9,8 @@ Complete interface forms: [implements, interface extends, get/set and delegation
 
 Interfaces do not require learning generics at the same time. Start with [interface/implements](fundamentals/14-interfaces.md), then [interface extension, delegation and composition](fundamentals/15-interface-design.md), before returning for generics and callbacks.
 
+Study separately: [generics](intermediate/16-generics.md), [function values/lambdas](intermediate/17-lambda.md), then [variadics](intermediate/18-variadics.md).
+
 ## 1. A numeric function with a type parameter
 
 Complete program:

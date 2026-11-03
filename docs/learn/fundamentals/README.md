@@ -63,3 +63,5 @@ Windows PowerShell：
 完成基础后，再学习[所有权](../04-ownership.md)、[动态容器](../05-collections.md)、[错误处理](../06-errors.md)、[模块与包](../07-packages.md)、[泛型与回调](../08-generics.md)。
 
 需要查一个词时使用[字典](../reference-keywords.md)，需要复习组合语法时使用[类型参考](../reference-types.md)。参考表不代替这里的逐步课程。
+
+继续按顺序学习：[第 16–23 课：泛型到 Flow](../intermediate/README.md)。进入异步部分前，先复习 Result 和错误分支。

@@ -7,6 +7,8 @@ Async work can suspend and resume. A thread is an OS-scheduled execution path
 that can run concurrently. An async function does not automatically create a
 new thread.
 
+Read the sequence first: [iterators](intermediate/19-iterators.md), [sync*](intermediate/20-sync-generators.md), [async/await](intermediate/21-async-await.md), [Future errors](intermediate/22-future-errors.md), and [async*/Flow](intermediate/23-async-flow.md). This chapter retains an overview and threading topic.
+
 ## 1. A synchronous generator
 
 Complete program:
@@ -102,7 +104,8 @@ func main() -> int32 {
   if values == nil { return 2; }
   let items: Array<int32> = values as Array<int32>;
   for index in 0..items.Len() {
-    Console.Println("{0}", items.Get(index));
+    let value: int32 = items.Get(index);
+    Console.Println("{0}", value);
   }
   return 0;
 }

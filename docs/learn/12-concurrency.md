@@ -12,6 +12,8 @@
 
 异步函数不等于自动创建新线程。
 
+先按顺序读：[迭代器](intermediate/19-iterators.md) → [sync*](intermediate/20-sync-generators.md) → [async/await](intermediate/21-async-await.md) → [Future 错误](intermediate/22-future-errors.md) → [async*/Flow](intermediate/23-async-flow.md)。本课保留概览与线程专题。
+
 ## 1. 同步生成器
 
 完整程序：
@@ -114,7 +116,8 @@ func main() -> int32 {
   if values == nil { return 2; }
   let items: Array<int32> = values as Array<int32>;
   for index in 0..items.Len() {
-    Console.Println("{0}", items.Get(index));
+    let value: int32 = items.Get(index);
+    Console.Println("{0}", value);
   }
   return 0;
 }

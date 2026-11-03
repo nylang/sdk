@@ -57,3 +57,5 @@ Use the complete released SDK 1.0.5 for this route’s foundational forms and do
 ## After foundations
 
 Continue with [ownership](../04-ownership.md), [dynamic containers](../05-collections.md), [errors](../06-errors.md), [modules/packages](../07-packages.md), and [generics/callbacks](../08-generics.md). Consult the [dictionary](../reference-keywords.md) and [type reference](../reference-types.md) for lookup alongside, rather than instead of, the sequential lessons.
+
+Continue in order with [lessons 16–23: generics through Flow](../intermediate/README.md). Review Result/error alternatives before the async lessons.

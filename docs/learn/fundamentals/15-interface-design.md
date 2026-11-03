@@ -1,6 +1,6 @@
 # 15 · 接口扩展、delegate 与组合边界
 
-[English](../en/fundamentals/15-interface-design.md) · [上一课](14-interfaces.md) · [基础目录](README.md) · [下一课](../04-ownership.md)
+[English](../en/fundamentals/15-interface-design.md) · [上一课](14-interfaces.md) · [基础目录](README.md) · [下一课](../intermediate/16-generics.md)
 
 ## 本课目标
 
@@ -212,4 +212,4 @@ base=40, score=42
 
 指出本课每个声明的类型、每次写入改变了谁、每个调用需要什么输入。解释例子中的输出，再用练习的边界输入验证自己的理解。若解释不清，回到本课第一例逐条跟踪，而不是直接加上下一课语法。
 
-[上一课](14-interfaces.md) · [基础目录](README.md) · [下一课](../04-ownership.md)
+[上一课](14-interfaces.md) · [基础目录](README.md) · [下一课](../intermediate/16-generics.md)

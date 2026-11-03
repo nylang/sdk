@@ -1,6 +1,6 @@
 # 15 · Interface extension, delegation and composition
 
-[中文](../../fundamentals/15-interface-design.md) · [Previous](14-interfaces.md) · [Foundation index](README.md) · [Next](../04-ownership.md)
+[中文](../../fundamentals/15-interface-design.md) · [Previous](14-interfaces.md) · [Foundation index](README.md) · [Next](../intermediate/16-generics.md)
 
 ## Goals
 
@@ -212,4 +212,4 @@ A concrete wrapper convenience can stay on its type. Add an interface requiremen
 
 Identify each declared type, the value changed by each write, and the inputs required by each call. Explain the output and use exercise boundaries to challenge your explanation. If unclear, trace the first example before adding the next lesson’s syntax.
 
-[Previous](14-interfaces.md) · [Foundation index](README.md) · [Next](../04-ownership.md)
+[Previous](14-interfaces.md) · [Foundation index](README.md) · [Next](../intermediate/16-generics.md)

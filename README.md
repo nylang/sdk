@@ -8,9 +8,12 @@ Each native SDK includes nyrac, nyra-analyzer, nyra, pinned LLVM and its native 
 ## Learn Nyra
 
 Start with the [English foundations course](docs/learn/en/fundamentals/README.md)
-or [中文基础课程](docs/learn/fundamentals/README.md): 15 sequential lessons and
-60 complete examples/answers, from basic statements through structs, methods,
-factories, properties, extends and interfaces. The [full course](docs/learn/en/README.md)
+or [中文基础课程](docs/learn/fundamentals/README.md): 23 sequential lessons and
+92 complete mainline example/answer packages, plus two labelled SDK-limited
+protocol references, from basic statements through structs, methods,
+factories, properties, extends, interfaces, generics, lambdas, variadics, iterators
+and async/Flow. See the [help manuals](docs/manual/README.md) for language, kernel,
+stdlib and offline API lookup. The [full course](docs/learn/en/README.md)
 also covers ownership, containers, packages, tests and integration topics.
 
 

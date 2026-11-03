@@ -10,6 +10,8 @@
 
 接口不必和泛型一起学。先读 [interface 与 implements](fundamentals/14-interfaces.md)，再读[接口扩展、delegate 和组合](fundamentals/15-interface-design.md)，最后回到本课学习泛型与回调。
 
+按功能逐课学习：[泛型](intermediate/16-generics.md) → [函数值与 lambda](intermediate/17-lambda.md) → [变参](intermediate/18-variadics.md)。
+
 ## 1. 一个函数处理多种数字
 
 完整程序：
