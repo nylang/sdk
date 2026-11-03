@@ -8,6 +8,8 @@
 
 接口完整写法：[implements、接口 extends、get/set 和 delegate](reference-types.md)。
 
+接口不必和泛型一起学。先读 [interface 与 implements](fundamentals/14-interfaces.md)，再读[接口扩展、delegate 和组合](fundamentals/15-interface-design.md)，最后回到本课学习泛型与回调。
+
 ## 1. 一个函数处理多种数字
 
 完整程序：

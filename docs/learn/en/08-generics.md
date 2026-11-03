@@ -7,6 +7,8 @@ as an argument.
 
 Complete interface forms: [implements, interface extends, get/set and delegation](reference-types.md).
 
+Interfaces do not require learning generics at the same time. Start with [interface/implements](fundamentals/14-interfaces.md), then [interface extension, delegation and composition](fundamentals/15-interface-design.md), before returning for generics and callbacks.
+
 ## 1. A numeric function with a type parameter
 
 Complete program:

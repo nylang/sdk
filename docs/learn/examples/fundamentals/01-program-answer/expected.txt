@@ -1,0 +1,2 @@
+ready
+total=42

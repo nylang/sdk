@@ -2,7 +2,7 @@
 
 [English](en/00-windows-start.md)
 
-[选择系统](00-start.md) · [教程目录](README.md) · [下一课：变量和类型](01-values.md)
+[选择系统](00-start.md) · [教程目录](README.md) · [下一课：读懂程序](fundamentals/01-program.md)
 
 这一课使用 Windows x86_64、本机 Nyra SDK 和 PowerShell。
 命令中的路径是例子，先替换成你实际保存的位置。
@@ -30,10 +30,10 @@ powershell
 ## 2. 选择完整 SDK
 
 按 [SDK 安装指南](../../INSTALL.md) 下载、校验并解压 windows-x86_64 发行包。
-假设解压在 E:/sdks/nyra-sdk-1.0.3-windows-x86_64，换成实际位置：
+假设解压在 E:/sdks/nyra-sdk-1.0.5-windows-x86_64，换成实际位置：
 
 ```powershell
-$env:NYRA_SDK = "E:/sdks/nyra-sdk-1.0.3-windows-x86_64"
+$env:NYRA_SDK = "E:/sdks/nyra-sdk-1.0.5-windows-x86_64"
 $env:NYRA_SDK_ROOT = $env:NYRA_SDK
 $env:NYRA_HOST = "windows-x86_64"
 $env:NYRAC = "$env:NYRA_SDK/hosts/$env:NYRA_HOST/bin/nyrac.exe"
@@ -63,7 +63,7 @@ Path("package.yaml").write_text("name: nyra_lessons\n", encoding="utf-8")
 '@ | python -
 ```
 
-SDK 1.0.3 自动查找自带的 kernel、stdlib 和 ntest。这里无需编译器源码或绝对依赖地址。
+SDK 1.0.5 自动查找自带的 kernel、stdlib 和 ntest。这里无需编译器源码或绝对依赖地址。
 
 
 ## 4. 保存并运行代码
@@ -149,4 +149,4 @@ with (out / "stdout.log").open("wb") as stdout, (out / "stderr.log").open("wb") 
 
 这一课使用 Windows x86_64 本机 SDK；它不代表 Windows ARM64 或所有旧版 Windows 都已验收。
 
-**继续：[第 01 课](01-values.md)。**
+**继续：[第 01 课](fundamentals/01-program.md)。**

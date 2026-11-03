@@ -30,7 +30,8 @@ Nyra 通过值的所有权和作用域来安排清理。多数日常代码不需
 import "stdlib:stdlib.ny";
 
 func show_title(title: ref string) -> void {
-  Console.Println("书名：{0}", title);
+  Console.Print("书名：");
+  Console.Println(title);
 }
 
 func main() -> int32 {

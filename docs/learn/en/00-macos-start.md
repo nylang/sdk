@@ -1,6 +1,6 @@
 # 00: Your first program on macOS
 
-[中文](../00-macos-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](01-values.md)
+[中文](../00-macos-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](fundamentals/01-program.md)
 
 The goal is to print a greeting. Follow the steps first; later lessons explain
 the language in more detail.
@@ -26,7 +26,7 @@ Replace the SDK path with the directory containing your manifest. Intel users
 must select the Intel archive and change `NYRA_HOST` to `darwin-x86_64`.
 
 ```sh
-export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.3-darwin-arm64"
+export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.5-darwin-arm64"
 export NYRA_SDK_ROOT="$NYRA_SDK"
 export NYRA_HOST="darwin-arm64"
 export NYRAC="$NYRA_SDK/hosts/$NYRA_HOST/bin/nyrac"
@@ -56,7 +56,7 @@ Path("package.yaml").write_text("name: nyra_lessons\n", encoding="utf-8")
 PYTHON
 ```
 
-SDK 1.0.3 locates kernel, stdlib and ntest implicitly. Ecosystem packages are
+SDK 1.0.5 locates kernel, stdlib and ntest implicitly. Ecosystem packages are
 configured in later lessons; source code still needs its `import` statements.
 
 ## 4. Save and run the complete program

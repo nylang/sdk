@@ -8,6 +8,8 @@
 
 完整补充：[方法、静态方法、命名工厂、get/set、extends、接口、delegate 与 drop](reference-types.md)。同名与重载规则也在其中。
 
+本课是概览。首次学习请按顺序读：[字段与值](fundamentals/09-struct-data.md) → [实例方法](fundamentals/10-methods.md) → [静态方法与工厂](fundamentals/11-creation.md) → [get/set](fundamentals/12-properties.md) → [struct extends](fundamentals/13-extends.md)。每篇有独立完整程序和练习答案。
+
 ## 1. 定义一类数据
 
 完整程序：
@@ -116,9 +118,12 @@ enum TaskState {
 
 func state_text(state: TaskState) -> string {
   switch state {
-    case TaskState.Todo { return "待完成"; }
-    case TaskState.Done { return "已完成"; }
-    default { return "未知"; }
+    case TaskState.Todo:
+      return "待完成";
+    case TaskState.Done:
+      return "已完成";
+    default:
+      return "未知";
   }
 }
 

@@ -2,10 +2,10 @@
 
 [English](en/00-linux-start.md)
 
-[选择系统](00-start.md) · [教程目录](README.md) · [下一课：变量和类型](01-values.md)
+[选择系统](00-start.md) · [教程目录](README.md) · [下一课：读懂程序](fundamentals/01-program.md)
 
 这一课使用 Linux x86_64、Bash 和匹配的本机 Nyra SDK。
-SDK 1.0.3 的公开发行记录使用 Ubuntu 24.04.5 / glibc 2.39；其他发行版需核对兼容性。
+系统与 glibc 版本要求以当前 SDK 安装指南为准。
 先按 [SDK 安装指南](../../INSTALL.md) 下载、校验并解压完整 Linux SDK。
 
 ## 1. 准备环境
@@ -50,7 +50,7 @@ Ubuntu 的 `build-essential` 包包含 GCC、make 和 libc 开发依赖；
 把 NYRA_SDK 改成实际解压位置，不需要进入编译器源码仓库：
 
 ```sh
-export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.3-linux-x86_64"
+export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.5-linux-x86_64"
 export NYRA_SDK_ROOT="$NYRA_SDK"
 export NYRA_HOST="linux-x86_64"
 export NYRAC="$NYRA_SDK/hosts/$NYRA_HOST/bin/nyrac"
@@ -78,7 +78,7 @@ Path("package.yaml").write_text("name: nyra_lessons\n", encoding="utf-8")
 PYTHON
 ```
 
-SDK 1.0.3 自动查找自带的 kernel、stdlib 和 ntest，不需要配置私有源码路径。
+SDK 1.0.5 自动查找自带的 kernel、stdlib 和 ntest，不需要配置私有源码路径。
 
 
 ## 4. 保存并运行代码
@@ -130,4 +130,4 @@ macOS/Linux 章节的 Bash 命令基本相同，继续使用本课设置的变�
 - SDK 解压后路径多了一层：确认 `NYRA_SDK/manifest.json` 和 `NYRA_SDK/hosts/linux-x86_64` 确实存在。
 - 出现源码错误：先运行 `check`，从第一条诊断开始修复。
 
-**继续：[第 01 课](01-values.md)。**
+**继续：[第 01 课](fundamentals/01-program.md)。**

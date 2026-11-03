@@ -6,6 +6,18 @@ This course starts with your first program and builds toward a small tool split
 into clear modules. No language-design background is required. Start with lesson
 00 for your platform, even if you already know another programming language.
 
+## Start with the sequential foundations
+
+After lesson 00 setup, start **[Foundations: from statements to type design](fundamentals/README.md)**.
+The 15 lessons follow prerequisite order. Each provides three complete programs,
+expected output, explanations, common mistakes and an independently runnable exercise answer, with source files.
+
+- Lessons 01–08: program structure, variables, operators, conditions, loops, functions, arrays, strings, borrows and addresses.
+- Lessons 09–13: struct fields/values, instance methods, static methods, factories, get/set, struct extends and composition.
+- Lessons 14–15: interface, implements, interface calls, interface extends, delegation and boundaries.
+
+Experienced programmers should still read the method, extension and interface sections to check Nyra’s naming, layout and dispatch rules. The older overview and project lessons below remain useful for review and subsequent ownership, containers, errors and modules; they are no longer the entire foundation course.
+
 ## Language reference: look up definitions and complete examples
 
 - [Keyword and type dictionary](reference-keywords.md): each word's purpose, position and contextual distinctions.
@@ -15,8 +27,6 @@ into clear modules. No language-design background is required. Start with lesson
 
 These four references are available throughout the course. Lessons 03, 04, 07, 08
 and 10 link directly to their relevant companion.
-
-The nine complete program groups and one test file added in these references were checked and run on macOS arm64 with the native 1.0.3 seed compiler: two tests passed and one was ignored as declared. This focused example check is not a rerun of the other lessons or SDK release acceptance.
 
 ## How to use the course
 
@@ -28,18 +38,9 @@ observe the result, then try the exercise.
 - An **intentionally invalid example** teaches a diagnostic; keep it separate.
 - Expected output is a learning target, not a new execution acceptance report.
 
-Start with the [SDK 1.0.3 installation guide](../../../INSTALL.md). The public
-setup needs no compiler implementation checkout. These lessons were adapted
-from development-era material; not every example was rerun for this translation.
-JSON/YAML consumers must account for the [1.0.3 Git-lock issue](../../../RELEASE-1.0.3.md).
-The mobile lessons retain integration references using development tools that
-are not distributed in the public SDK. Candidate 1.0.4 commands are labelled;
-do not assume they exist in 1.0.3.
+Start with the [complete SDK 1.0.5 installation](../../../INSTALL.md), without a compiler-source checkout. Keep old SDK limitations in their release notes and use matching tools/libraries for this route. Mobile integration lessons retain development references whose scripts are not distributed in the public SDK; running a foundation example does not establish device acceptance. Advanced development features keep their own availability notes.
 
-Examples retain some Chinese strings and expected output as intentional UTF-8
-test data. The surrounding explanations, setup and navigation are in English.
-
-After setup, save the lesson's program as `playground/main.ny`, then run:
+After setup, replace playground/main.ny with one complete program, then check and run:
 
 ```sh
 "$NYRAC" check "$NYRA_WORK/playground/main.ny"

@@ -5,6 +5,8 @@
 Use the `playground/main.ny` from lesson 00. Each complete program below replaces
 the previous one; do not paste multiple entry points into one file.
 
+Step-by-step: [program structure](fundamentals/01-program.md), [variables/scope](fundamentals/02-values.md), and [operators](fundamentals/03-operators.md).
+
 ## 1. Name your data
 
 Complete program:

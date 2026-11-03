@@ -1,6 +1,6 @@
 # 00: Your first program on Windows
 
-[中文](../00-windows-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](01-values.md)
+[中文](../00-windows-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](fundamentals/01-program.md)
 
 Use Windows x86_64 and PowerShell. Replace example paths with actual locations.
 
@@ -26,7 +26,7 @@ Download, verify and extract the Windows archive using [INSTALL.md](../../../INS
 Replace the directory below with its real location:
 
 ```powershell
-$env:NYRA_SDK = "E:/sdks/nyra-sdk-1.0.3-windows-x86_64"
+$env:NYRA_SDK = "E:/sdks/nyra-sdk-1.0.5-windows-x86_64"
 $env:NYRA_SDK_ROOT = $env:NYRA_SDK
 $env:NYRA_HOST = "windows-x86_64"
 $env:NYRAC = "$env:NYRA_SDK/hosts/$env:NYRA_HOST/bin/nyrac.exe"
@@ -56,7 +56,7 @@ Path("package.yaml").write_text("name: nyra_lessons\n", encoding="utf-8")
 '@ | python -
 ```
 
-SDK 1.0.3 finds kernel, stdlib and ntest without private source dependencies.
+SDK 1.0.5 finds kernel, stdlib and ntest without private source dependencies.
 The here-string markers must occupy separate lines.
 
 ## 4. Save and run the program

@@ -23,7 +23,8 @@ Complete program:
 import "stdlib:stdlib.ny";
 
 func show_title(title: ref string) -> void {
-  Console.Println("书名：{0}", title);
+  Console.Print("书名：");
+  Console.Println(title);
 }
 
 func main() -> int32 {

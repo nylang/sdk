@@ -1,10 +1,8 @@
 # 00: Your first program on Linux
 
-[中文](../00-linux-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](01-values.md)
+[中文](../00-linux-start.md) · [Course index](README.md) · [Choose a platform](00-start.md) · [Next](fundamentals/01-program.md)
 
-Use Linux x86_64, Bash and a matching complete SDK. The 1.0.3 public acceptance
-record uses Ubuntu 24.04.5/glibc 2.39; other distributions need a compatibility
-check. Download and verify the SDK using [INSTALL.md](../../../INSTALL.md).
+Use Linux x86_64, Bash and a matching complete SDK. Consult the current SDK installation guide for host/glibc requirements. Download and verify the SDK using [INSTALL.md](../../../INSTALL.md).
 
 ## 1. Prepare native development tools
 
@@ -39,7 +37,7 @@ select a compatible SDK; do not overwrite the system libc.
 Replace the SDK directory below. A compiler source checkout is unnecessary.
 
 ```sh
-export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.3-linux-x86_64"
+export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.5-linux-x86_64"
 export NYRA_SDK_ROOT="$NYRA_SDK"
 export NYRA_HOST="linux-x86_64"
 export NYRAC="$NYRA_SDK/hosts/$NYRA_HOST/bin/nyrac"

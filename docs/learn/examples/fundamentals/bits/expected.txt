@@ -1,0 +1,2 @@
+flags=3, shifted=8
+read enabled

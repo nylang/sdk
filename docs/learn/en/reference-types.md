@@ -6,6 +6,8 @@ Each complete program independently replaces `main.ny`; check and run it using
 Lesson 00. Success returns 0; a nonzero return identifies a failed check.
 Complete programs contain no placeholder implementations.
 
+Use this page for lookup. For teaching order, start at [struct fields](fundamentals/09-struct-data.md) and continue through [interface design](fundamentals/15-interface-design.md).
+
 ## 1. Definition locations and call forms
 
 | Purpose | Definition form | Use | `self`? |

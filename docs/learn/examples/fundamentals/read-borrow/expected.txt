@@ -1,0 +1,2 @@
+borrowed=Nyra
+still=Nyra

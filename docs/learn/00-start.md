@@ -13,7 +13,7 @@ Nyra 的代码在几个系统上写法相同。开始学习前，需要先配置
 - Windows x86_64 电脑：[Windows 起步](00-windows-start.md)，使用 PowerShell。
 - Linux x86_64 电脑：[Linux 起步](00-linux-start.md)，使用 Bash。
 
-完成对应的第 00 课，看到 `你好，Nyra！` 后，统一进入 [第 01 课](01-values.md)。
+完成对应的第 00 课，看到 `你好，Nyra！` 后，统一进入 [第 01 课](fundamentals/01-program.md)。
 其他架构要先取得匹配的 SDK，不能把 `darwin-arm64`、`windows-x86_64`、`linux-x86_64` 的目录名互相替换来冒充适配。
 
 ## 2. “电脑系统”和“目标系统”不一定相同
@@ -30,9 +30,9 @@ Nyra 的代码在几个系统上写法相同。开始学习前，需要先配置
 
 ## 3. SDK 到底是什么
 
-SDK 从[公开发行页](https://github.com/nylang/sdk/releases/tag/v1.0.3)下载；
+SDK 从[公开发行页](https://github.com/nylang/sdk/releases/tag/v1.0.5)下载；
 先按 [INSTALL.md](../../INSTALL.md) 核对 SHA256SUMS 并完整解压。
-公开 1.0.3 SDK 的主要布局是：
+完整 SDK 1.0.5 的主要布局是：
 
 ```text
 SDK目录/
@@ -51,7 +51,7 @@ SDK目录/
 
 `hosts` 放在开发电脑上执行的工具，`packages` 放 SDK 自带的库及其目标产物。
 JSON、YAML 是独立生态包，不在这里假定存在 `targets/本机/json` 等旧布局。
-SDK 1.0.3 每套只包含自己的桌面运行库；SDK 1.0.2 的跨目标目录保持原来的范围。
+完整本机 SDK 提供对应运行库；其他目标按安装指南选择匹配的独立运行库包。
 目标是否可用，以实际 SDK 的 manifest 为准。不要通过修改目录名冒充其他平台支持。
 
 ## 4. 后续代码相同，终端命令有区别
@@ -87,10 +87,13 @@ Windows 前面的 `&` 表示执行后面路径指向的程序。
 
 这三课使用很小的业务库逐步连接手机界面，不会要求你先用 Nyra 重写整个手机 UI。
 
-## 6. SDK 1.0.4 的包创建入口（候选功能）
+## 6. 可选的包创建入口
 
-使用带有 1.0.4 工具的 SDK 时，可以运行 `nyra new hello` 创建应用，或运行
-`nyra new mylib --kind lib` 创建库。先加 `--dry-run --json` 可以查看计划。
-已有源码目录使用 `nyra init ./existing --name existing`，不会重写源码。
-VS Code 中的 **Nyra: Create Package** 和 **Nyra: Initialize Package** 使用同一套原生入口。
-这部分目前属于 1.0.4 源码候选；旧版 SDK 没有这些命令时，请按各平台第 00 课手动创建文件。
+完整 SDK 1.0.5 的 nyra 工具可用 `nyra new hello` 创建应用，或用
+`nyra new mylib --kind lib` 创建库。`--dry-run --json` 可先查看计划。
+已有源码目录可用 `nyra init ./existing --name existing`。
+入门课仍保留手动创建两个文件的步骤，帮助理解包根与入口，不要求先熟悉 IDE。
+
+## 配置完成后怎么继续
+
+先读[基础课程第 01 课：读懂程序](fundamentals/01-program.md)，再按每课底部的下一课依次学习。原来的第 01–03 课保留为概览，逐步教程不要求你先看懂结构体、泛型或接口。

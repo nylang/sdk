@@ -4,6 +4,8 @@
 
 Choose actions based on conditions and put repeated calculations into functions.
 
+Step-by-step: [branches](fundamentals/04-conditions.md), [loops](fundamentals/05-loops.md), and [functions/parameters](fundamentals/06-functions.md).
+
 ## 1. Choose with if
 
 Complete program:

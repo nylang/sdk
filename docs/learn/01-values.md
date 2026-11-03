@@ -7,6 +7,8 @@
 这一课学习如何记住一个数字或一段文字。仍然使用第 00 课的 `playground/main.ny`。
 本课各个“完整程序”互相替换，不要同时粘进一个文件。
 
+分步学习：[程序结构](fundamentals/01-program.md)、[变量与作用域](fundamentals/02-values.md)、[运算与表达式](fundamentals/03-operators.md)。
+
 ## 1. 给数据起名字
 
 完整程序：

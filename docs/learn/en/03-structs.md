@@ -6,6 +6,8 @@ A book's title and price belong together. A struct gives related data a name.
 
 Full companion: [methods, static methods, named factories, get/set, extends, interfaces, delegation and drop](reference-types.md), including duplicate-name rules.
 
+This is an overview. First-time readers should follow [fields/values](fundamentals/09-struct-data.md) → [instance methods](fundamentals/10-methods.md) → [static methods/factories](fundamentals/11-creation.md) → [get/set](fundamentals/12-properties.md) → [struct extends](fundamentals/13-extends.md), each with complete programs and answers.
+
 ## 1. Define a data shape
 
 Complete program:
@@ -111,9 +113,12 @@ enum TaskState {
 
 func state_text(state: TaskState) -> string {
   switch state {
-    case TaskState.Todo { return "待完成"; }
-    case TaskState.Done { return "已完成"; }
-    default { return "未知"; }
+    case TaskState.Todo:
+      return "待完成";
+    case TaskState.Done:
+      return "已完成";
+    default:
+      return "未知";
   }
 }
 

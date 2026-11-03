@@ -5,6 +5,15 @@ Official binary distributions of the Nyra programming language.
 Download [Nyra SDK 1.0.5](https://github.com/nylang/sdk/releases/tag/v1.0.5).
 Each native SDK includes nyrac, nyra-analyzer, nyra, pinned LLVM and its native runtime.
 
+## Learn Nyra
+
+Start with the [English foundations course](docs/learn/en/fundamentals/README.md)
+or [中文基础课程](docs/learn/fundamentals/README.md): 15 sequential lessons and
+60 complete examples/answers, from basic statements through structs, methods,
+factories, properties, extends and interfaces. The [full course](docs/learn/en/README.md)
+also covers ownership, containers, packages, tests and integration topics.
+
+
 ## Native SDKs
 
 - [darwin-arm64](https://github.com/nylang/sdk/releases/download/v1.0.5/nyra-sdk-1.0.5-darwin-arm64.tar.gz)

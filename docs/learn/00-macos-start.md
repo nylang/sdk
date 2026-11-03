@@ -2,7 +2,7 @@
 
 [English](en/00-macos-start.md)
 
-[选择系统](00-start.md) · [教程目录](README.md) · [下一课：变量和类型](01-values.md)
+[选择系统](00-start.md) · [教程目录](README.md) · [下一课：读懂程序](fundamentals/01-program.md)
 
 这一课只做一件事：让屏幕显示 `你好，Nyra！`。
 先照着操作，后面几课再解释语言细节。
@@ -30,7 +30,7 @@ xcrun --show-sdk-path
 Intel Mac 同时把 NYRA_HOST 改成 darwin-x86_64，并选择对应的 SDK。
 
 ```sh
-export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.3-darwin-arm64"
+export NYRA_SDK="$HOME/Downloads/nyra-sdk-1.0.5-darwin-arm64"
 export NYRA_SDK_ROOT="$NYRA_SDK"
 export NYRA_HOST="darwin-arm64"
 export NYRAC="$NYRA_SDK/hosts/$NYRA_HOST/bin/nyrac"
@@ -60,7 +60,7 @@ Path("package.yaml").write_text("name: nyra_lessons\n", encoding="utf-8")
 PYTHON
 ```
 
-SDK 1.0.3 会自动找到自带的 kernel、stdlib 和 ntest；这里不写机器相关的依赖路径。
+SDK 1.0.5 会自动找到自带的 kernel、stdlib 和 ntest；这里不写机器相关的依赖路径。
 JSON/YAML 等生态包在对应课程中单独说明。后续源码仍需写 import。
 
 

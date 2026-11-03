@@ -6,6 +6,8 @@
 
 这一课让程序根据条件选择动作，并把重复的步骤整理成函数。
 
+分步学习：[分支](fundamentals/04-conditions.md)、[循环](fundamentals/05-loops.md)、[函数与参数](fundamentals/06-functions.md)。
+
 ## 1. 用 `if` 做选择
 
 完整程序：

@@ -1,0 +1,2 @@
+clamped=0
+valid=42
