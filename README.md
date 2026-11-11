@@ -24,6 +24,16 @@ also covers ownership, containers, packages, tests and integration topics.
 - [linux-x86_64 candidate](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-sdk-1.1.2-linux-x86_64-candidate.tar.gz). Cross-compiled on macOS and validated on AlmaLinux 10. [Linux x86_64 1.0.5](https://github.com/nylang/sdk/releases/download/v1.0.5/nyra-sdk-1.0.5-linux-x86_64.tar.gz) has native G1/G2 qualification.
 - [windows-x86_64](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-sdk-1.1.2-windows-x86_64.zip)
 
+## Runtime packages from 1.1.2
+
+- [RISC-V RV64IMAC/LP64 kernel](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-runtime-1.1.2-kernel-rv64imac-lp64.tar.gz)
+- [RISC-V RV64GC/LP64D kernel](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-runtime-1.1.2-kernel-rv64gc-lp64d.tar.gz)
+- [Linux RISC-V RV64GC/LP64D](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-runtime-1.1.2-stdlib-linux-riscv64.tar.gz)
+- [Android arm64 and x86_64](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-runtime-1.1.2-stdlib-android.tar.gz)
+- [iOS device and simulator](https://github.com/nylang/sdk/releases/download/v1.1.2/nyra-runtime-1.1.2-stdlib-ios.tar.gz)
+
+[Runtime checksums](https://github.com/nylang/sdk/releases/download/v1.1.2/SHA256SUMS-runtimes)
+
 ## Runtime packages from 1.0.5
 
 - [kernel-ntest-rv64imac-lp64](https://github.com/nylang/sdk/releases/download/v1.0.5/nyra-runtime-1.0.5-kernel-ntest-rv64imac-lp64.tar.gz): rv64imac-lp64
